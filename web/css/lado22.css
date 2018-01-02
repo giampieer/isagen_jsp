@@ -1,0 +1,500 @@
+
+
+
+/*BARRA DE LADO*/
+
+body {
+  background-color: #424242;/*plomo*/
+
+}
+.bd{
+ background-color: #212121;
+}
+body,
+html { height: 100%;}
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {background-color: transparent;}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+#wrapper.toggled {
+  padding-left: 220px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  left: 220px;
+  width: 0;
+  height: 100%;
+  margin-left: -220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #1a1a1a;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 220px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  padding-top: 70px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -220px;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+
+.sidebar-nav {
+  position: absolute;
+  top: 160px;/*POSICION PARA ABAJO dentro*/
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  position: relative; 
+  line-height: 20px;
+  display: inline-block;
+  width: 100%;
+}
+
+.sidebar-nav li:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 3px;
+  background-color: #1c1c1c;
+  -webkit-transition: width .2s ease-in;
+  -moz-transition:  width .2s ease-in;
+  -ms-transition:  width .2s ease-in;
+  transition: width .2s ease-in;
+
+}
+.sidebar-nav li:first-child a {
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+.sidebar-nav li:nth-child(2):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(3):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(4):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(5):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(6):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(7):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(8):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:nth-child(9):before {
+  background-color: #01579B;   
+}
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+  width: 100%;
+  -webkit-transition: width .2s ease-in;
+  -moz-transition:  width .2s ease-in;
+  -ms-transition:  width .2s ease-in;
+  transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 10px 15px 10px 30px;    
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 20px;
+  line-height: 44px;
+}
+.sidebar-nav .dropdown-menu {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  background-color: #222;
+  box-shadow: none;
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+  position: fixed;
+  top: 155px;  /*POSICION PARA ABAJO */
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-closed .hamb-top { 
+  top: 5px; 
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 5px;  
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed:hover .hamb-top {
+  top: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  bottom: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-bottom {
+  top: 50%;
+  margin-top: -2px;  
+}
+.hamburger.is-open .hamb-top { 
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open .hamb-middle { display: none; }
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+/*-------------------------------*/
+/*            Overlay            */
+/*-------------------------------*/
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+
+
+
+
+
+/*CARRUSEL*/
+.fade-carousel {
+  position: relative;
+  height: 50vh;
+}
+.fade-carousel .carousel-inner .item {
+  height: 50vh;
+}
+.fade-carousel .carousel-indicators > li {
+  margin: 0 2px;
+  background-color: #f39c12;
+  border-color: #f39c12;
+  opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+  -webkit-transform: translate3d(-50%,-50%,0);
+  -moz-transform: translate3d(-50%,-50%,0);
+  -ms-transform: translate3d(-50%,-50%,0);
+  -o-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+  font-size: 6em;    
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+  opacity: 0;
+  -webkit-transition: 2s all ease-in-out .1s;
+  -moz-transition: 2s all ease-in-out .1s; 
+  -ms-transition: 2s all ease-in-out .1s; 
+  -o-transition: 2s all ease-in-out .1s; 
+  transition: 2s all ease-in-out .1s; 
+}
+.fade-carousel .carousel-inner .item.active .hero {
+  opacity: 1;
+  -webkit-transition: 2s all ease-in-out .1s;
+  -moz-transition: 2s all ease-in-out .1s; 
+  -ms-transition: 2s all ease-in-out .1s; 
+  -o-transition: 2s all ease-in-out .1s; 
+  transition: 2s all ease-in-out .1s;    
+}
+
+
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+      background-image: url(../imagenes/carrusel1.jpg) ;
+
+  /*background-image: url(http://www.esan.edu.pe/conexion/actualidad/2016/01/27/Constitucion_2_Principal.jpg) ;*/
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(http://www.jmf.com.pe/wp-content/uploads/2016/08/encabezado1.png);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://revistaitnow.com/wp-content/uploads/2013/01/shutterstock_93807551.jpg);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+  .hero { width: 980px; }    
+}
+@media screen and (max-width: 640px){
+  .hero h1 { font-size: 4em; }    
+}
+
+
+
+
+
+
+
+/*tabla*/
+th{
+  
+  background-color:#009688;/*verde*/
+  color: white;
+}
+tr{
+  color: #000;
+}
+td{
+  
+  background-color: #006699;/*azul*/
+
+}
+
+
+.imglado{
+  width: 30px;
+}
+/*borde de los mensajes  */
+
+.alert{
+  background-color: #006699;
+  color: white;
+  padding: 20px;
+  border-radius: 7px;
+  
+}
+
+.audio{
+  max-width: 300px;
+  width: 95%;
+  
+}
+.anchoformulario{
+  width: 96%;
+}
+
+/*titulo de gestion de proyectos*/
+.tituloblanco{
+  color: #fff;
+}
+
+/*barra en los formularios*/
+.titulocontenedor{
+  color: #000;
+  background-color:#009688;
+  
+}
+
+/*barra de carga*/
+.load-bar {
+      position:relative;
+    bottom:0;
+    height:5px;
+    width:100%;
+}
+.bar {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 50%;
+  text-align: center;
+}
+.bar:nth-child(1) {
+  background-color: #da4733;
+  animation: loading 3s linear infinite;
+}
+.bar:nth-child(2) {
+  background-color: #3b78e7;
+  animation: loading 3s linear 1s infinite;
+}
+.bar:nth-child(3) {
+  background-color: #fdba2c;
+  animation: loading 3s linear 2s infinite;
+}
+@keyframes loading {
+    from {left: 50%; width: 0;z-index:100;}
+    33.3333% {left: 0; width: 100%;z-index: 10;}
+    to {left: 0; width: 100%;}
+}
+
